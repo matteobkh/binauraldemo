@@ -26,7 +26,7 @@ void BinauralPanner::process(float in, float& l, float& r) {
     }
     // scale distance and calculate gain reduction
     // subtract -0.333 cause thats minimum dist
-    float dist_scaled = -3.0f * (dist - 0.333f); //-3 -> -12dB max gr, -2 -> -6dB
+    float dist_scaled = -3.0f * (dist - 0.333f); //if k=-3 -> -12dB max gr, -2 -> -6dB
     float gr = pow(2.0f, dist_scaled);
     delay.write(in);
     // LEF CHANNEL: if angle -90 -> delay min (0 samples)
